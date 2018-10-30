@@ -9,8 +9,10 @@ lazy val `beginner-ai` =
     .settings(settings)
     .settings(
       libraryDependencies ++= Seq(
+        library.cats,
+        library.catsEffect,
         library.scalaCheck % Test,
-        library.utest      % Test
+        library.scalaTest  % Test
       )
     )
 
@@ -22,10 +24,14 @@ lazy val library =
   new {
     object Version {
       val scalaCheck = "1.14.0"
-      val utest      = "0.6.6"
+      val scalaTest = "3.0.5"
+      val cats = "1.4.0"
+      val catsEffect = "1.0.0"
     }
+    val cats = "org.typelevel" %% "cats-core" % Version.cats
+    val catsEffect = "org.typelevel" %% "cats-effect" % Version.catsEffect
     val scalaCheck = "org.scalacheck" %% "scalacheck" % Version.scalaCheck
-    val utest      = "com.lihaoyi"    %% "utest"      % Version.utest
+    val scalaTest = "org.scalatest" %% "scalatest" % Version.scalaTest
   }
 
 // *****************************************************************************
@@ -55,7 +61,6 @@ lazy val commonSettings =
     ),
     Compile / unmanagedSourceDirectories := Seq((Compile / scalaSource).value),
     Test / unmanagedSourceDirectories := Seq((Test / scalaSource).value),
-    testFrameworks += new TestFramework("utest.runner.Framework"),
     Compile / compile / wartremoverWarnings ++= Warts.unsafe
 )
 
