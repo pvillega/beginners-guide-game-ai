@@ -1,6 +1,8 @@
-# beginner-ai #
+# Beginner AI #
 
-Welcome to beginner-ai!
+Tries to implement concepts from 'Total Beginner's Guide to Game AI' blog post, saved in the repository as a pdf at the root.
+
+Note this is completely amateurish (no experience in AI at all) so don't use this for anything serious. 
 
 ## Contribution policy ##
 
