@@ -1,6 +1,6 @@
-package com.aracon.beginner.ai
+package com.aracon.beginner.ai.basic
 
-object BasicDecisionMaking {
+object Pong {
 
   // First example, Pong. Approaches like this are often termed “reactive” because there are a simple set of rules – in this case, ‘if’ statements in the code – which react to the current state of the world and immediately make a decision on how to act.
   final case class Position(x: Int, y: Int)
@@ -22,4 +22,3 @@ object BasicDecisionMaking {
   }
 
 }
-
